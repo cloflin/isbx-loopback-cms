@@ -147,6 +147,11 @@ angular.module('dashboard.Dashboard.Model.List', [
       $scope.gridOptions.plugins.push(new ngGridCsvExportPlugin());
     }
 
+    //Load Strings
+    if (Config.serverParams.strings) {
+      $scope.cancelButtonText = Config.serverParams.strings.cancelButton;
+      $scope.saveButtonText = Config.serverParams.strings.saveButton;
+    }
   }
 
   function getColumnDefinition() {
